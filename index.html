@@ -1,0 +1,128 @@
+<!DOCTYPE html> <!-- Define o tipo de documento como HTML5 -->
+<html lang="pt-br"> <!-- Define o idioma da página como português do Brasil -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Responsividade em dispositivos móveis -->
+    <link rel="stylesheet" href="styles.css"> <!-- Importa o arquivo de estilos CSS externo -->
+    <title> Bruno | Portifólio </title> <!-- Título da aba do navegador -->
+</head>
+
+<body>
+
+    <div class="particulas"> </div>
+
+    <!-- Menu de navegação principal -->
+    <nav class="navegacao"> <!-- Define a barra de navegação principal -->
+        <ul class="menu"> <!-- Lista de itens do menu -->
+
+            <li>
+                <a href="#inicio" class="menu-link">inicio</a> <!-- Link para a seção de início -->
+            </li>
+
+            <li>
+                <a href="#sobre" class="menu-link">sobre</a> <!-- Link para a seção sobre -->
+            </li>
+
+            <li>
+                <a href="#projetos" class="menu-link">projetos</a> <!-- Link para a seção de projetos -->
+            </li>
+
+            <li>
+                <a href="#contato" class="menu-link">contato</a> <!-- Link para a seção de contato -->
+            </li>
+
+        </ul>
+    </nav>
+
+    <!-- Seção de cabeçalho com nome e profissão -->
+    <main id="inicio" class="cabecalho"> <!-- Seção principal com ID "inicio" -->
+        <img src="./img/bruno.png" alt="Foto de Bruno Braga Tavares" class="foto-perfil"> <!-- Foto de perfil -->
+        <h1>Bruno Braga Tavares</h1> <!-- Nome -->
+        <p class="cabecalho-sub-titulo">desenvolvedor Front End</p> <!-- Profissão -->
+    </main>
+
+    <!-- Seção sobre mim -->
+    <section id="sobre" class="sobre"> <!-- Seção com ID "sobre" -->
+        <h2 class="sobre-titulo">sobre mim</h2> <!-- Título da seção -->
+        <div class="sobre-caixa"> <!-- Caixa que contém o texto de apresentação -->
+            <p class="sobre-paragrafo">
+                <!-- Texto de apresentação -->
+                Olá! Sou um desenvolvedor front-end apaixonado por criar sempre novas experiências, gosto de design
+                moderno
+                e arrojado.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção de projetos -->
+    <section id="projetos" class="projetos"> <!-- Seção com ID "projetos" -->
+        <h2 class="projetos-titulo">Meus Projetos</h2> <!-- Título da seção -->
+        <div class="projetos-caixa"> <!-- Container que agrupa os cards dos projetos -->
+
+            <!-- Card do projeto 1 -->
+            <div class="projetos-card"> <!-- Card individual do projeto -->
+                <img src="./img/bmw.png" alt="projeto 1" class="projetos-imagem"> <!-- Imagem do projeto -->
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Maquina veloz</h3> <!-- Título do projeto -->
+                    <p class="paragrafo-projetos">Projeto desenvolvido com muita dedicação sangue e suor velocidade
+                        máxima</p>
+                </div>
+            </div>
+
+            <!-- Card do projeto 2 -->
+            <div class="projetos-card"> <!-- Segundo card de projeto -->
+                <img src="./img/cerebro.png" alt="projeto 1" class="projetos-imagem"> <!-- Imagem do projeto -->
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Projeto voltado para o alto conhecimento</h3> <!-- Título do projeto -->
+                    <p class="paragrafo-projetos">Divulgação do alto conhecimento humano enfatizando Elio Couto
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card do projeto 3 -->
+            <div class="projetos-card"> <!-- Terceiro card de projeto -->
+                <img src="./img/estrutura.png" alt="projeto 1" class="projetos-imagem"> <!-- Imagem do projeto -->
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Estrutura backend</h3> <!-- Título do projeto -->
+                    <p class="paragrafo-projetos">Estrutura de um projeto backend com muito esforço e dedicação</p>
+                </div>
+            </div>
+
+        </div> <!-- Fim da div.projetos-caixa -->
+    </section>
+
+    <!-- Seção de contato -->
+    <section id="contato" class="contatos"> <!-- Seção com ID "contato" -->
+        <h2 class="contatos-titulo">Entre em Contato</h2> <!-- Título da seção -->
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)"> <!-- Formulário de contato -->
+            <div class="grupo-form"> <!-- Grupo do campo de nome -->
+                <input placeholder="Nome" class="campo-form" id="nome"> <!-- Campo para nome -->
+            </div>
+            <div class="grupo-form"> <!-- Grupo do campo de mensagem -->
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+                <!-- Campo para mensagem -->
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5527997835384';
+
+            const texto = `Olá! Me chamo ${nome}  ${mensagem}`;
+            const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>
